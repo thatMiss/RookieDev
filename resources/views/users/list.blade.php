@@ -31,7 +31,7 @@
                             <td>{{$user->user_role}}</td>
                             <td>
                                 <a href="{{route('users.show', $user->id)}} " class="btn btn-sm btn-primary mb-2"><i class="far fa-eye mr-4"></i>View</a>
-                                <a href="#" class="btn btn-sm btn-success mb-2"><i class="far fa-edit mr-4"></i>Edit</a>
+                                <a href="{{route('users.edit', $user->id)}}" class="btn btn-sm btn-success mb-2"><i class="far fa-edit mr-4"></i>Edit</a>
                                 <a href="#" class="btn btn-sm btn-danger mb-2"><i class="fas fa-trash-alt mr-4"></i>Delete</a>
                             </td>
 
