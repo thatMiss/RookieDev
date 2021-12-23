@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Gate;
 
 class AdminController extends Controller
 {
@@ -14,6 +15,7 @@ class AdminController extends Controller
      */
     public function index()
     {
+        Gate::authorize('can-do-anything');
         $users=User::all();
         return view('users.list', ['users'=>$users]);
     }
@@ -25,7 +27,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        Gate::authorize('can-do-anything');
     }
 
     /**
@@ -36,7 +38,7 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Gate::authorize('can-do-anything');
     }
 
     /**
@@ -47,7 +49,9 @@ class AdminController extends Controller
      */
     public function show(User $user)
     {
+        Gate::authorize('can-do-anything');
         return view('users.show', ['user'=>$user]);
+        
     }
 
     /**
@@ -56,9 +60,10 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        Gate::authorize('can-do-anything');
+        return view('users.edit', ['user'=>$user]);
     }
 
     /**
@@ -70,7 +75,7 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Gate::authorize('can-do-anything');
     }
 
     /**
@@ -81,6 +86,6 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Gate::authorize('can-do-anything');
     }
 }
