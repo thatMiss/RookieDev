@@ -29,9 +29,11 @@
 </head>
 
 <body>
+    @include('include.header')
     <div class="font-sans text-gray-900 antialiased">
         {{ $slot }}
     </div>
-</body>
 
+    @include('include.scripts')
+</body>
 </html>

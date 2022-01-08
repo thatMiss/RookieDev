@@ -1,15 +1,14 @@
 <x-guest-layout>
-  <section class="contact-us" id="contact">
+<section class="contact-us" id="contact">
     <div class="container">
       <div class="row">
         <div class="col-lg-9 align-self-center">
           <div class="row">
             <div class="col-lg-12">
-              <br> <br>
               <form id="contact" action="" method="post">
                 <div class="row">
                   <div class="col-lg-12">
-                    <h2>Report Accident!</h2>
+                    <h2>Are You in Danger Send Message Now!</h2>
                   </div>
                   <div class="col-lg-4">
                     <fieldset>
@@ -18,23 +17,8 @@
                   </div>
                   <div class="col-lg-4">
                     <fieldset>
-                      <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="YOUR EMAIL..." required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-4">
-                    <fieldset>
-                      <input name="Telephone Number" type="tel" id="tel" placeholder="TELEPHONE NUMBER...*" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-4">
-                    <fieldset>
-                      <input name="date" type="date" id="date" placeholder="date" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-4">
-                    <fieldset>
-                      <input name="city" type="city" id="city" placeholder="CITY...*" required="">
-                    </fieldset>
+                    <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="YOUR EMAIL..." required="">
+                  </fieldset>
                   </div>
                   <div class="col-lg-4">
                     <fieldset>
@@ -43,18 +27,12 @@
                   </div>
                   <div class="col-lg-12">
                     <fieldset>
-                      <textarea name="accidentscene" type="text" class="form-control" id="accidentscene" placeholder="Accident Scene..." required=""></textarea>
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
                       <textarea name="message" type="text" class="form-control" id="message" placeholder="YOUR MESSAGE..." required=""></textarea>
                     </fieldset>
                   </div>
                   <div class="col-lg-12">
-                    <input type="file" id="File" name="filename">
                     <fieldset>
-                      <button type="submit" id="form-submit" class="button">SEND</button>
+                      <button type="submit" id="form-submit" class="button">SEND MESSAGE NOW</button>
                     </fieldset>
                   </div>
                 </div>
@@ -62,9 +40,26 @@
             </div>
           </div>
         </div>
+        <div class="col-lg-3">
+          <div class="right-info">
+            <ul>
+              <li>
+                <h6>Phone Number</h6>
+                <span>155</span>
+              </li>
+              <li>
+                <h6>Email Address</h6>
+                <span>police@police.com</span>
+              </li>
+              <li>
+                <h6>Website URL</h6>
+                <span>www.police.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-    <x-footer />
+    <x-footer/>
   </section>
-
 </x-guest-layout>
