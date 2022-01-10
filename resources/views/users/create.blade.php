@@ -1,40 +1,31 @@
 <x-app-layout>
     <div class="container-fluid px-4">
         <h1 class="mt-4">RookieDev</h1>
-        <form action="{{route('users.update', $user->id)}}" method='POST' enctype="multipart/form-data">
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+        <form action="{{route('users.store')}}" method='POST' enctype="multipart/form-data">
             @csrf
-            @method('PUT')
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-info-circle me-1"></i>
-                    Edit Administrator Details
+                    Add New User
                 </div>
 
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h4>ID:</h4>
-                        </div>
-                        <div class="col-md-6">
-                            <span>{{sprintf('%011d', $user->id)}}</span>
-                        </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h4>Date of Registration:</h4>
-                        </div>
-                        <div class="col-md-6">
-                            <span>{{$user->created_at}}</span>
-                        </div>
-                    </div>
-
-                    <div class="row">
+                <div class="row">
                         <div class="col-md-6">
                             <h4>Avatar:</h4>
                         </div>
                         <div class="col-md-6">
-                            <input name="adminAvatar" type="file" accept="image/png, image/jpg, image/jpeg, image/gif" class="control-input">
+                            <input name="adminAvatar" accept="image/png, image/jpg, image/jpeg, image/gif" type="file" class="control-input">
                         </div>
                     </div>
 
@@ -43,7 +34,7 @@
                             <h4>Name:</h4>
                         </div>
                         <div class="col-md-6">
-                            <input name="adminName" type="text" class="control-input" value="{{$user->name}}">
+                            <input name="adminName" type="text" class="control-input" placeholder="User Name" value="{{old('adminName')}}">
                         </div>
                     </div>
 
@@ -52,7 +43,25 @@
                             <h4>Email:</h4>
                         </div>
                         <div class="col-md-6">
-                            <input name="adminEmail" type="text" class="control-input" value="{{$user->email}}">
+                            <input name="adminEmail" type="text" class="control-input" placeholder="Email" value="{{old('adminEmail')}}">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Password:</h4>
+                        </div>
+                        <div class="col-md-6">
+                            <input name="password" type="password" class="control-input" placeholder="Password" value="{{old('password')}}">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Password Confirmation:</h4>
+                        </div>
+                        <div class="col-md-6">
+                            <input name="password_confirmation" type="password" class="control-input" placeholder="Confirm Password" value="{{old('password_confirmation')}}">
                         </div>
                     </div>
 
@@ -61,20 +70,20 @@
                             <h4>Phone Number:</h4>
                         </div>
                         <div class="col-md-6">
-                            <input name="adminPhone" type="text" class="control-input" value="{{$user->phone_number}}">
+                            <input name="adminPhone" type="text" class="control-input" placeholder="Phone Number" value="{{old('adminPhone')}}">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-6">
-                            <h4>Admin Role:</h4>
+                            <h4>User Role:</h4>
                         </div>
                         <div class="col-md-6">
-                            <select name="adminRole" type="text" class="control-input" value="{{$user->user_role}}">
-                                <option value='user' {{$user->user_role=='user'?'selected':''}}>User</option>
-                                <option value='super-admin' {{$user->user_role=='super-admin'?'selected':''}}>Super Admin</option>
-                                <option value='missing-person-admin' {{$user->user_role=='missing-person-admin'?'selected':''}}>Missing Person Admin</option>
-                                <option value='most-wanted-admin' {{$user->user_role=='most-wanted-admin'?'selected':''}}>Most Wanted Admin</option>
+                            <select name="adminRole" type="text" class="control-input">
+                                <option value='user'>User</option>
+                                <option value='super-admin'>Super Admin</option>
+                                <option value='missing-person-admin'>Missing Person Admin</option>
+                                <option value='most-wanted-admin'>Most Wanted Admin</option>
 
                             </select>
                         </div>
@@ -85,7 +94,7 @@
                             <h4>Address:</h4>
                         </div>
                         <div class="col-md-6">
-                            <input name="adminAddress" type="text" class="control-input" value="{{$user->address}}">
+                            <textarea name="adminAddress" type="text" class="control-input" placeholder="Address">{{old('adminAddress')}}</textarea>
                         </div>
                     </div>
 
@@ -94,14 +103,14 @@
                             <h4>Attached Department:</h4>
                         </div>
                         <div class="col-md-6">
-                            <input name="adminArea" type="text" class="control-input" value="{{$user->area}}">
+                            <input name="adminArea" type="text" class="control-input" placeholder="Department" value="{{old('adminArea')}}">
                         </div>
                     </div>
 
                 </div>
             </div>
             <div class="text-right">
-            <button type="submit" class="btn btn-primary">Edit</button>
+                <button type="submit" class="btn btn-primary">Add</button>
             </div>
         </form>
     </div>

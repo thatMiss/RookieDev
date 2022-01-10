@@ -5,12 +5,12 @@
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-info-circle me-1"></i>
-                Administrator Details
+                Officer Details
             </div>
 
             <div class="card-body">
 
-            <a href="{{route('users.index')}} " class="btn btn-sm btn-primary mb-2"><i class="fas fa-chevron-left mr-4"></i> Back to List</a>
+            <a href="{{route('officers-details')}} " class="btn btn-sm btn-primary mb-2"><i class="fas fa-chevron-left mr-4"></i> Back to List</a>
 
             <div class="row mb-3">
                     <div class="col-md-6">
