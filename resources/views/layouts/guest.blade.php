@@ -34,6 +34,9 @@
         {{ $slot }}
     </div>
 
+    
+
     @include('include.scripts')
 </body>
+
 </html>
