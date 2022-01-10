@@ -23,12 +23,12 @@ class CreateMissingPersonsTable extends Migration
             $table->string('missing_last_name');
             $table->string('gender');
             $table->integer('age');
-            $table->date('date');
             $table->string('last_seen');
             $table->string('city');
+            $table->string('status')->default('Unsolved');
             $table->string('address')->nullable();
             $table->string('description')->nullable();
-            $table->string('image')->nullable();
+            $table->string('attachment')->nullable();
             $table->timestamps();
         });
     }

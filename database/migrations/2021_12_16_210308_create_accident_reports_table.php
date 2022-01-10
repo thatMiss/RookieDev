@@ -20,11 +20,9 @@ class CreateAccidentReportsTable extends Migration
             $table->string('email');
             $table->string('phone');
             $table->string('city');
-            $table->string('type');
-            $table->string('model')->nullable();
-            $table->string('location');
+            $table->string('location')->nullable();
             $table->string('message')->nullable();
-            $table->string('image')->nullable();
+            $table->string('attachment')->nullable();
             $table->timestamps();
         });
     }

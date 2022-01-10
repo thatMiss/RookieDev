@@ -23,6 +23,8 @@ class CreateMostWantedPersonsTable extends Migration
             $table->string('occupation');
             $table->string('crime');
             $table->string('message')->nullable();
+            $table->string('price');
+            $table->string('tag')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
         });

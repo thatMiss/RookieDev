@@ -22,10 +22,10 @@ class CreateCrimeReportsTable extends Migration
             $table->date('date');
             $table->string('city')->nullable();
             $table->string('type');
-            $table->string('status');
+            $table->string('status')->default('Unsolved');
             $table->string('location')->nullable();
             $table->string('message')->nullable();
-            $table->string('image')->nullable();
+            $table->string('attachment')->nullable();
             $table->timestamps();
         });
     }

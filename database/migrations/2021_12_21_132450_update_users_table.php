@@ -18,6 +18,8 @@ class UpdateUsersTable extends Migration
             $table->string('user_role')->default('user');
             $table->string('address')->nullable();
             $table->string('area')->nullable();
+            $table->string('avatar');
+
         });
     }
 
@@ -29,7 +31,7 @@ class UpdateUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('phone_number', 'user_role', 'address', 'area');
+            $table->dropColumn('phone_number', 'user_role', 'address', 'area', 'avatar');
         });
     }
 }
