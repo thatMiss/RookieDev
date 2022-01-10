@@ -16,11 +16,11 @@
                         <li class="has-sub">
                             <a href="javascript:void(0)">Complaint</a>
                             <ul class="sub-menu">
-                                <li><a href="{{ route('report-crime')}}">report crime</a></li>
-                                <li><a href="{{ route('report-accident')}}">report accident</a></li>
-                                <li><a href="{{ route('report-missing')}}">report missing</a></li>
+                                <li><a href="{{route('report-crime')}}?anonymous=false">report crime</a></li>
+                                <li><a href="{{route('report-accident')}}?anonymous=false">report accident</a></li>
+                                <li><a href="{{route('report-missing')}}?anonymous=false">report missing</a></li>
                             </ul>
-                        <li><a href="{{route('news')}}">News</a></li>
+                        <li><a href="{{route('list-missing')}}">Missing Persons</a></li>
                         <li><a href="{{route('contact')}}">Contact Us</a></li>
                     </ul>
                     <a class='menu-trigger'>

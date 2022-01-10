@@ -9,12 +9,12 @@
 
                 @if(Auth::user()->user_role=='missing-person-admin' || Auth::user()->user_role=='super-admin')
                 <div class="sb-sidenav-menu-heading">Manage Missing Persons</div>
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="{{route('missing.index')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-th-list"></i></div>
                     Missing Person List
                 </a>
 
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="{{route('missing.create')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-plus-circle"></i></div>
                     Add New Report
                 </a>
@@ -23,12 +23,12 @@
                 @if(Auth::user()->user_role=='most-wanted-admin' || Auth::user()->user_role=='super-admin')
                 <div class="sb-sidenav-menu-heading">Manage Most Wanted</div>
 
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="{{route('wanted.index')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-th-list"></i></div>
                     Most Wanted List
                 </a>
 
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="{{route('wanted.create')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-plus-circle"></i></div>
                     Add New Report
                 </a>
@@ -43,8 +43,8 @@
                 </a>
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="layout-static.html">Crime Reports</a>
-                        <a class="nav-link" href="layout-sidenav-light.html">Accident Reports</a>
+                        <a class="nav-link" href="{{route('crimes.index')}}">Crime Reports</a>
+                        <a class="nav-link" href="{{route('accidents.index')}}">Accident Reports</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -54,11 +54,11 @@
                 </a>
                 <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{route('crimes.create')}}">
                             Crime Form
                         </a>
 
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{route('accidents.create')}}">
                             Accident Form
                         </a>
 
@@ -70,20 +70,16 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     View Administrators
                 </a>
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="{{route('users.create')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     Add New Admin
                 </a>
                 @endif
 
                 <div class="sb-sidenav-menu-heading">Miscellaneous</div>
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="{{route('officers-details')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     Officer Details
-                </a>
-                <a class="nav-link" href="tables.html">
-                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                    Help Center
                 </a>
             </div>
         </div>
