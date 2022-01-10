@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class MostWantedPerson extends Model
 {
     use HasFactory;
+    
+    protected $table='most_wanted_persons';
 
     protected $fillable = [
 
@@ -19,6 +21,9 @@ class MostWantedPerson extends Model
         'occupation',
         'crime',
         'message',
+        'price',
+        'tag',
+        'attachment'
          
 
     ];

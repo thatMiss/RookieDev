@@ -15,11 +15,14 @@ class AccidentReport extends Model
         'last_name',
         'email',
         'phone',
+        'date',
         'city',
-        'type',
-        'model',
+        'status',
+        //'type',
+        //'model',
         'location',
         'message',
+        'attachment',
     
     ];
 

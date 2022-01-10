@@ -21,6 +21,7 @@ class CrimeReport extends Model
         'status',
         'location',
         'message',
+        'attachment',
 
 
     ];

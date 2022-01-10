@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class MissingPerson extends Model
 {
     use HasFactory;
+    protected $table="missing_persons";
     protected $fillable = [
         
         'complainant_first_name',
@@ -18,11 +19,13 @@ class MissingPerson extends Model
         'missing_last_name',
         'gender',
         'age',
-        'date',
         'last_seen',
         'city',
+        'status',
         'address',
         'description',
+        'attachment',
+        'confirmed',
     
     ];
 }
